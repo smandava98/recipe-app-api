@@ -1,0 +1,15 @@
+version: "3"
+
+#services that make up our app here
+
+services:
+  app:
+    build:
+      context: . #this is our current directory
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app #this maps our app directory to our app directory in our docker image
+    command: > #this is the command to run the docker app
+      sh -c "python manage.py runserver 0.0.0.0:8000"
+  #above line means we are running a shell command
