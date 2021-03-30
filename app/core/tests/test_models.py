@@ -19,6 +19,6 @@ class ModelTests(TestCase):
 
 
     def test_create_new_superuser(self):
-        user = get_user_model.objects.create_superuser('test@londonappdev.com','testpass123')
+        user = get_user_model().objects.create_superuser('test@londonappdev.com','testpass123')
         self.assertTrue(user.is_superuser)
         self.assertTrue(user.is_staff)
